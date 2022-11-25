@@ -6,14 +6,15 @@ void main() {
 
 // ! If and Else Conditions
 void text() {
-  final name = "Ginura";
+  const name = "Ginura";
   // * final - Value cannot be changed after it's been assigned to
 
   if (name == 'Ginura') {
     print("Yes this is Ginura");
-  } else {
+  } else if (name != "Ransika") {
+    print("This value is not Ransika");
+  } else
     print("No this is not Ginura");
-  }
 }
 
 class MyApp extends StatelessWidget {
