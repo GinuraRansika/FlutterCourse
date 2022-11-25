@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(const MyApp());
 }
+// ignore_for_file: avoid_print
 
 // ! If and Else Conditions
 void text() {
@@ -13,8 +14,9 @@ void text() {
     print("Yes this is Ginura");
   } else if (name != "Ransika") {
     print("This value is not Ransika");
-  } else
+  } else {
     print("No this is not Ginura");
+  }
 }
 
 class MyApp extends StatelessWidget {
