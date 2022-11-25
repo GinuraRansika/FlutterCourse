@@ -1,19 +1,28 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
+// ! Constant - Values cannot be changed
+const age = 21;
+const doubleTheAge = age * 2;
+
+/*
+  * Saving a flutter file - do a hot reload 
+  ? Hot Reload - will look for changes in your code hierarchy and execute only those changed codes
+*/
+
+// *!Functions -
+// ? String - return value
+String getFullName(String firstName, String lastName) {
+  // * You can just return like "return firstName + ' ' + lastName;" but there's a better way by formatting
+  return '$firstName $lastName';  // * String formatting
 }
 
-// ! If and Else Conditions
-void text() {
-  final name = "Ginura";
-  // * final - Value cannot be changed after it's been assigned to
-
-  if (name == 'Ginura') {
-    print("Yes this is Ginura");
-  } else {
-    print("No this is not Ginura");
-  }
+// ! Functions -
+// ? void - return value
+void main() {
+  // ! Variables - Values can be changed
+  var name = "Ginura";
+  name = 'Ransika';
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -22,7 +31,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    text();
+    print(getFullName("Ginura", "Ransika")); // * Calling the function
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
