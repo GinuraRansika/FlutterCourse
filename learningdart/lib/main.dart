@@ -4,26 +4,12 @@ void main() {
   runApp(const MyApp());
 }
 
-// ! If and Else Conditions
-void text() {
-  const name = "Ginura";
-  // * final - Value cannot be changed after it's been assigned to
-
-  if (name == 'Ginura') {
-    print("Yes this is Ginura");
-  } else if (name != "Ransika") {
-    print("This value is not Ransika");
-  } else
-    print("No this is not Ginura");
-}
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    text();
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(

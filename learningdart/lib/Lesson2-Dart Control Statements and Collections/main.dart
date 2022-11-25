@@ -19,6 +19,53 @@ void text() {
   }
 }
 
+// ! Operators
+// * You can even make custom operators in Dart
+void operators() {
+  const name = "Ginura";
+  final nameTimes20 = name * 20;
+  print(nameTimes20);
+}
+
+// ! Lists
+void list() {
+  final names = ['Ginura', 'Ransika', 'Seram'];
+  final ginura = names[2];
+  print(names.length);
+  names.add("Chandima");
+  print(names.length);
+  print(ginura);
+}
+
+// ! Sets
+// * List of unique "things"
+void sets() {
+  // * Dart automatically understand name is a String you don't have to manually do it like "final String name = "Ginura";
+  const name = 'Ginura';
+  var names = {"Ginura", "Ransika", "Seram", "ginura"};
+  names.add("Hirun");
+  names.add("Hirun");
+  names.add("Ransika");
+  names.add(name);
+  // ? Data won't get duplicated even though you try to do it.
+  print(names);
+}
+
+// ! Maps
+// * maps is a data structure  and it is used to hold key value pairs of information
+void maps() {
+  // * Keys inside the map should be unique
+  var person = {
+    'age': 20,
+    'name': 'Ginura',
+  };
+
+  print(person);
+  person['name'] = "Ransika";
+  person['lastName'] = "Seram";
+  print(person);
+}
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -26,6 +73,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     text();
+    operators();
+    list();
+    sets();
+    maps();
+
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
