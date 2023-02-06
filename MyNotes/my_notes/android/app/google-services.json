@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "307639242012",
+    "project_id": "ginura-notes-project",
+    "storage_bucket": "ginura-notes-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:307639242012:android:38b452fafe6d8aec26bed9",
+        "android_client_info": {
+          "package_name": "com.example.my_notes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "307639242012-vfc9nfnul1ukemq5m0un8qsukvj2l218.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDidAUv3GZxK5pgsFX1n8SUzhqnQro6oJI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "307639242012-vfc9nfnul1ukemq5m0un8qsukvj2l218.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "307639242012-034qr05eoaqegdlc228042k1c9fpnaeq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.myNotes"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
