@@ -42,5 +42,4 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
-
-**/my_notes/ios/Runner/GoogleService-Info.plist
+/my_notes/ios/Runner/GoogleService-Info.plist
