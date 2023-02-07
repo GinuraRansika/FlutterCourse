@@ -47,6 +47,10 @@ void main() {
         ? Enables widget binding before Firebase.initializeApp 
           * put WidgetsFlutterBinding.ensureInitialized(); in the main();
           * change the body to a FutureBuilder
+
+        ? Loading screen while waiting
+          * add a switch(snapshot.connectionState){}
+          * add column part to the done state and others as loading
         
 
   */
@@ -92,56 +96,61 @@ class _HomePageState extends State<HomePage> {
           options: DefaultFirebaseOptions.currentPlatform,
         ),
         builder: (context, snapshot) {
-          return Column(
-            // column will create an children property which can display list of widgets
-            children: [
-              TextField(
-                // assigning controllers to the text fields
-                controller: _email,
-                //* below will add a @ sign in keyboard
-                keyboardType: TextInputType.emailAddress,
-                enableSuggestions: false,
-                autocorrect: false,
-                decoration:
-                    const InputDecoration(hintText: "Enter your Email here"),
-              ),
-              TextField(
-                controller: _password,
-                obscureText:
-                    true, // * put the point instead of showing the characters
-                enableSuggestions: false,
-                autocorrect: false,
-                decoration:
-                    const InputDecoration(hintText: "Enter your Password here"),
-              ),
-              TextButton(
-                onPressed: () async {
-                  // * when the button is pressed need to get the values in the textfield
-                  // * way to do that is using text controller
+          switch (snapshot.connectionState) {
+            case ConnectionState.done:
+              return Column(
+                // column will create an children property which can display list of widgets
+                children: [
+                  TextField(
+                    // assigning controllers to the text fields
+                    controller: _email,
+                    //* below will add a @ sign in keyboard
+                    keyboardType: TextInputType.emailAddress,
+                    enableSuggestions: false,
+                    autocorrect: false,
+                    decoration: const InputDecoration(
+                        hintText: "Enter your Email here"),
+                  ),
+                  TextField(
+                    controller: _password,
+                    obscureText:
+                        true, // * put the point instead of showing the characters
+                    enableSuggestions: false,
+                    autocorrect: false,
+                    decoration: const InputDecoration(
+                        hintText: "Enter your Password here"),
+                  ),
+                  TextButton(
+                    onPressed: () async {
+                      // * when the button is pressed need to get the values in the textfield
+                      // * way to do that is using text controller
 
-                  /*
-                 ? text controller - will grab text information from the text field 
-                 ?                   so button can read that information(like a proxy)
-                */
+                      /*
+                    ? text controller - will grab text information from the text field 
+                    ?                   so button can read that information(like a proxy)
+                    */
 
-                  // * Getting email and password
-                  final email = _email.text;
-                  final password = _password.text;
+                      // * Getting email and password
+                      final email = _email.text;
+                      final password = _password.text;
 
-                  // * You need to put await in below method call
-                  // If you didn't put await you will only get the instance of the future
-                  // you won't actually get the work that it's doing
-                  // * You need to save the return UserCredential too
+                      // * You need to put await in below method call
+                      // If you didn't put await you will only get the instance of the future
+                      // you won't actually get the work that it's doing
+                      // * You need to save the return UserCredential too
 
-                  final userCredential = await FirebaseAuth.instance
-                      .createUserWithEmailAndPassword(
-                          email: email, password: password);
-                  print(userCredential);
-                },
-                child: const Text("Register"),
-              ),
-            ],
-          );
+                      final userCredential = await FirebaseAuth.instance
+                          .createUserWithEmailAndPassword(
+                              email: email, password: password);
+                      print(userCredential);
+                    },
+                    child: const Text("Register"),
+                  ),
+                ],
+              );
+            default:
+              return const Text("Loading.....");
+          }
         },
       ),
     );
