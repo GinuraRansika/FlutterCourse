@@ -12,11 +12,19 @@ void main() {
 
 // ! Creating a HomePage.
 // * Scaffold - We need a scaffold inside our HomePage widget to make it presentable
+/*
+      * add an appBar inside the scaffold 
+        ? inside the AppBar pass a title parameter 
+  */
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Register"),
+      ), // Create a new instance of AppBar()
+    );
   }
 }
